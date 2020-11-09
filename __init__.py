@@ -41,4 +41,21 @@ def getupper(txt):
 		line += 1
 		if char in allchars:
 			upperline.append(line)
-	return upperline
+		else:
+			if not char in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']:
+				raise SyntaxError(f'Unknown Character at character {str(line)}.')
+	if str(upperline) != '[]':
+		return upperline
+def getlower(txt):
+	line = 0
+	allchars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+	lowerline = []
+	for char in txt:
+		line += 1
+		if char in allchars:
+			lowerline.append(line)
+		else:
+			if not char in  ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']:
+				raise SyntaxError(f'Unknown Character at character {str(line)}.')
+	if str(lowerline) != '[]':
+		return lowerline

@@ -3,7 +3,7 @@ To install, use:
 ```
 pip install letterer
 ```
-Letterer includes the methods:\n
+Letterer includes the methods:  
 __isfirstwordtitle__ checks to see if the first word is title:
 ```python
 from letterer import isfirstwordtitle

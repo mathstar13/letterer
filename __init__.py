@@ -4,9 +4,14 @@ def isfirstwordtitle(txt):
 		if txt.startswith(char):
 			return True
 	return False
-def islower(txt):
+def islower(txt,checknum=0):
+	txt = txt.replace(' ','')
 	allchars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',' ']
-	for char1 in txt:
+	if checknum == 0:
+		for char in txt:
+			checknum += 1
+	for char2 in range(0,checknum):
+		char1 = txt[char2]
 		for char in allchars:
 			if char1 == char:
 				c = True
@@ -16,14 +21,31 @@ def islower(txt):
 		if not c:
 			return False
 	return True
-def istitle(txt):
-	for word in txt.split():
+def istitle(txt,count=0):
+	txt = txt.replace(' ','')
+	txt = txt.split()
+	counter = 0
+	if count == 0:
+		for item in txt:
+			count += 1
+	else: 
+		count -= 1
+		for item in txt:
+			if counter > count:
+				del txt[counter]
+			counter += 1
+	for word in txt:
 		if not isfirstwordtitle(word):
 			return False
 	return True
-def isupper(txt):
+def isupper(txt,checknum=0):
 	allchars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
-	for char1 in txt:
+	txt = txt.replace(' ','')
+	if checknum == 0:
+		for char in txt:
+			checknum += 1
+	for char2 in range(0,checknum):
+		char1 = txt[char2]
 		for char in allchars:
 			if char1 == char:
 				c = True

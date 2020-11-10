@@ -44,3 +44,20 @@ getupper(txt) #returns [1, 2, 3, 5, 6, 7]
 txt = 'YAY YaY'
 getupper(txt) #returns [1, 2, 3, 5, 7]
 ```
+__getlower__ gets the character location for lowercase letters:
+```python
+from letterer import getlower
+txt = 'yay yay'
+getlower(txt) #returns [1, 2, 3, 5, 6, 7]
+txt = 'yay yAy'
+getlower(txt) #returns [1, 2, 3, 5, 7]
+```
+__checknum__ is an optional parameter for istitle, islower, and isupper. It tells how many charaters (words for istitle) into the string (spaces aren't counted):
+```python
+from letterer import isupper
+#is the same for istitle, and islower.
+txt = 'YAY YAY'
+isupper(txt,6) #returns True
+txt = 'YAY YaY'
+isupper(txt,4) #returns True
+```
